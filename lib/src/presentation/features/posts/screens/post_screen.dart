@@ -48,6 +48,9 @@ class PostList extends StatelessWidget {
   Widget build(BuildContext context) => ListView.builder(
     key: UniqueKey(),
     itemCount: posts.length,
-    itemBuilder: (context, index) => Text(posts[index].id),
+    itemBuilder: (context, index) => ListTile(
+      title: Text(posts[index].id),
+      subtitle: Text(posts[index].postDescription),
+    ),
   );
 }
