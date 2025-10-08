@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:networkx/src/data/models/post_model.dart';
+import 'package:networkx/src/data/models/product_model.dart';
 import 'package:networkx/src/data/models/user_model.dart';
 import 'package:networkx/src/data/network/dio_client.dart';
 
@@ -41,5 +42,14 @@ class AppRepository {
     final response = await dioClient.post(endpoint, data: body);
     final data = response.data;
     return User.fromJson(data);
+  }
+
+  //PRODUCTS
+  Future<ProductsModel> fetchProducts() async {
+    const endpoint = 'products';
+    final response = await dioClient.get(endpoint);
+
+    final data = response.data;
+    return ProductsModel.fromJson(data);
   }
 }

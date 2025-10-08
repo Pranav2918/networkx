@@ -5,7 +5,7 @@ class DioClient {
   DioClient() {
     _dio = Dio(
       BaseOptions(
-        baseUrl: 'https://coupino-dev.onrender.com/',
+        baseUrl: 'https://dummyjson.com/', //https://coupino-dev.onrender.com/
         connectTimeout: const Duration(seconds: 30),
         receiveTimeout: const Duration(seconds: 30),
         headers: {'Content-Type': 'application/json'},
@@ -26,6 +26,19 @@ class DioClient {
       final response = await _dio.post(
         endpoint,
         data: data,
+        options: Options(headers: headers),
+      );
+      return response;
+    } on DioException catch (e) {
+      throw Exception(_handleError(e));
+    }
+  }
+
+  //GET REQUEST
+  Future<Response> get(String endPoint, {Map<String, dynamic>? headers}) async {
+    try {
+      final response = await _dio.get(
+        endPoint,
         options: Options(headers: headers),
       );
       return response;
