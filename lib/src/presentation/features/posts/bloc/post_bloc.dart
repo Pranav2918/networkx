@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:networkx/src/domain/repository/app_repository.dart';
+import 'package:networkx/src/domain/repositories/app_repositories.dart';
 import 'package:networkx/src/presentation/features/posts/bloc/post_events.dart';
 import 'package:networkx/src/presentation/features/posts/bloc/post_states.dart';
 
@@ -18,5 +18,5 @@ class PostBloc extends Bloc<PostEvents, PostStates> {
     });
   }
 
-  final AppRepository appRepository;
+  final AppRepositories appRepository;
 }

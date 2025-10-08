@@ -5,7 +5,7 @@ class DioClient {
   DioClient() {
     _dio = Dio(
       BaseOptions(
-        baseUrl: 'https://dummyjson.com/', //https://coupino-dev.onrender.com/
+        baseUrl: 'https://coupino-dev.onrender.com/', //https://coupino-dev.onrender.com/
         connectTimeout: const Duration(seconds: 30),
         receiveTimeout: const Duration(seconds: 30),
         headers: {'Content-Type': 'application/json'},

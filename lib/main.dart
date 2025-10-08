@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:networkx/src/di/injector.dart';
+import 'package:networkx/src/data/di/injector.dart';
 import 'package:networkx/src/presentation/features/auth/bloc/login_bloc.dart';
+import 'package:networkx/src/presentation/features/auth/screens/login_screen.dart';
 import 'package:networkx/src/presentation/features/posts/bloc/post_bloc.dart';
 import 'package:networkx/src/presentation/features/products/bloc/product_cubit.dart';
 import 'package:networkx/src/presentation/features/products/screens/product_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const ProductScreen(),
+      home: const LoginScreen(),
     ),
   );
 }

@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:networkx/src/domain/repository/app_repository.dart';
+import 'package:networkx/src/domain/repositories/app_repositories.dart';
 import 'package:networkx/src/presentation/features/auth/bloc/login_event.dart';
 import 'package:networkx/src/presentation/features/auth/bloc/login_state.dart';
 
@@ -21,5 +21,5 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     });
   }
 
-  final AppRepository appRepository;
+  final AppRepositories appRepository;
 }
